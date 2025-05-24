@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import { ContactSc } from './ContactModel.js';
 import bodyParser from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -13,10 +16,10 @@ app.use(cors({
   credentials:true
 }))
 
-// rmV9f2mW9RkMoLi7
-// mrohan51068
-mongoose.connect("mongodb+srv://mrohan51068:rmV9f2mW9RkMoLi7@cluster0.kholqdv.mongodb.net/", {
-  dbName: "F_p"
+// mdirshadcse2022
+// eGiVn38amsvq1kDH
+mongoose.connect(process.env.MONGODB_URI, {
+   dbName: process.env.DB_NAME
 }).then(() => console.log("connected")).catch((err) => console.log(err))
 
 // get All Contacts
