@@ -4,14 +4,15 @@ import Contact from './Contact.jsx';
 import AddBtn from './AddBtn.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
 
-// dotenv.config();
+
+dotenv.config();
 
 const App = () => {
 
-  const url = "http://localhost:2000";
+  const url = process.env.REACT_APP_API_URL;//"http://localhost:2000";
 
   const [contacts, setcontacts] = useState([])
   const [ShowModel, setShowModel] = useState(false)
