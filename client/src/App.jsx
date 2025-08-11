@@ -6,11 +6,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import dotenv from 'dotenv';
 
+
 // dotenv.config();
 
 const App = () => {
 
-  const url = "https://mern-add-delete-edit-contact.onrender.com";
+  const url = "http://localhost:2000";
 
   const [contacts, setcontacts] = useState([])
   const [ShowModel, setShowModel] = useState(false)

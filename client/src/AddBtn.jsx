@@ -47,7 +47,7 @@ const AddContact = ({ handelModel, ShowModel, url, reload, setReload, contacts, 
         transition: Bounce,
         });
     } else {
-      const api = await axios.post(`${url}/`, { name, gmail, phone }, {
+      const api = await axios.post(`${url}/add-contact`, { name, gmail, phone }, {
         headers: {
           "Content-Type": "application/json",
         },

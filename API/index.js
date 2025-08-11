@@ -10,14 +10,16 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
-app.use(cors({
+app.use(cors(
+  {
   origin:true,
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
-}))
+}
 
-// mdirshadcse2022
-// eGiVn38amsvq1kDH
+))
+
+
 mongoose.connect(process.env.MONGODB_URI, {
    dbName: process.env.DB_NAME
 }).then(() => console.log("connected")).catch((err) => console.log(err))
@@ -33,7 +35,7 @@ app.get("/", async (req, res) => {
   }
 });
 // add contact
-app.post("/", async (req, res) => {
+app.post("/add-contact", async (req, res) => {
   const { name, gmail, phone } = req.body;
   try {
     let contact = await ContactSc.findOne({ gmail });
