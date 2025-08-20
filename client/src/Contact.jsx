@@ -10,7 +10,7 @@ const Contacts = ({
   relaod,
   setRelaod,
   setId,
-  handleModal,
+  handelModel
 }) => {
   const blur = opacity ? "0.12" : "1";
 
@@ -84,7 +84,7 @@ const Contacts = ({
                 className="btn btn-primary"
                 onClick={() => {
                   setId(data._id);
-                  handleModal();
+                  handelModel();
                 }}
               >
                 Edit
